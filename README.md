@@ -36,16 +36,19 @@ Domain experts and connector maintainers can contribute small effect contracts, 
 
 We are looking for founding maintainers and contributors who can make one small, reviewable part real. Bring a concrete use case, a difficult test case, an interface sketch or a focused patch. If you use a coding agent, give it one agreed task and review its result. Accepted work matters more than generated volume.
 
-## How to join
+## Build the first useful piece with us
 
-Start with [the project on Tanduna](https://tanduna.com/projects/intent-relay). Read the [six-wave roadmap](ROADMAP.md) and [twelve proposed tasks](TASKS.md), then join the planning discussion and say which result you can help deliver. Propose scope before starting overlapping implementation. GitHub holds the source; Tanduna is where we organize the project and its community.
+Start with [Intent Relay on Tanduna](https://tanduna.com/projects/intent-relay) and the [first task: Specify operation and approval contracts](https://tanduna.com/p/intent-relay/tasks/tsk_008dcae410ef951971030363f82adef9). Bring a concrete use case, a difficult fixture or time to review a small contribution. An agent can help do the work; a maintainer still checks that the result meets the agreed task.
 
-- **W1: Describe the effects before the calls.** Define a minimal contract around intent and consequences.
-- **W2: A synthetic workflow with real semantics.** Implement the smallest inspectable multi-service run.
-- **W3: Execution that admits uncertainty.** Handle failures without duplicating effects.
-- **W4: Connect real tools deliberately.** Prove interoperability and ownership boundaries.
-- **W5: Work across teams and frameworks.** Keep permissions and meaning stable as adoption grows.
-- **W6: An open recovery commons.** Make operational reliability a maintained community asset.
+1. Pick one task from the [six-wave roadmap](ROADMAP.md) and [twelve task contracts](TASKS.md), then agree its scope and prerequisites.
+2. Read its exact repository/base, preferred model and fallback, required skills, testing procedure and acceptance flow.
+3. Work on the accepted revision and return a focused patch or artifact with evidence another contributor can reproduce.
+
+The first milestone is **Describe the effects before the calls**: Define a minimal contract around intent and consequences.
+
+The complete [contribution guide](CONTRIBUTING.md) includes two public downloads: the [shared contribution skill](https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md) and [Intent Relay validation skill](https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md). Both are pinned to exact Git commits. Every task selects GPT-6 Astra or Claude Fable 5.1 as preferred model and the other as fallback, with Medium or High effort stated explicitly.
+
+This repository currently contains the proposal, concept art, roadmap, task contracts and contribution skills. It does not yet contain a working product. Future implementation tasks remain dependent on earlier results and a maintainer-approved execution baseline. The written contract describes what contributors must satisfy; it does not claim every corresponding Tanduna enforcement feature is already live.
 
 ## What we are not promising
 

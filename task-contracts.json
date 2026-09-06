@@ -1,0 +1,723 @@
+{
+  "project": "intent-relay",
+  "schema": "maintainer-authored-contract-v1",
+  "platformEnforcement": "Not claimed by this document; verify the current Tanduna task revision and production capabilities.",
+  "tasks": [
+    {
+      "taskKey": "W1-T1",
+      "taskId": "tsk_008dcae410ef951971030363f82adef9",
+      "taskUrl": "https://tanduna.com/p/intent-relay/tasks/tsk_008dcae410ef951971030363f82adef9",
+      "title": "Specify operation and approval contracts",
+      "repositoryUrl": "https://github.com/thepianistdirector/intent-relay",
+      "baseBranch": "main",
+      "planningBaseCommit": "9710751a9ce5fdfe97cbcbed598075bf492c30df",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Maintainer accepts the scoped design protocol; this is not product implementation.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "medium"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "medium"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "intent-relay-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md",
+          "version": "9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Three example operations explicitly declare permissions and reversibility limits.",
+        "An approval binds to the proposed arguments and becomes invalid when they change."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "manual-protocol",
+        "procedure": "Trace a draft-order intent through preview, approval, execution and reconciliation. Change a precondition after preview and rehearse refusal or renewed approval; mark provider idempotency and compensation capabilities explicitly.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": null,
+        "evidenceLocation": "docs/work/W1-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W1-T2",
+      "taskId": "tsk_d0ea047750c36faf8d7b78404875af08",
+      "taskUrl": "https://tanduna.com/p/intent-relay/tasks/tsk_d0ea047750c36faf8d7b78404875af08",
+      "title": "Build a partial-failure scenario pack",
+      "repositoryUrl": "https://github.com/thepianistdirector/intent-relay",
+      "baseBranch": "main",
+      "planningBaseCommit": "9710751a9ce5fdfe97cbcbed598075bf492c30df",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "intent-relay-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md",
+          "version": "9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Each scenario states what is known, unknown and safe to try next.",
+        "At least one scenario requires reconciliation rather than a claimed automatic rollback."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "manual-protocol",
+        "procedure": "Build fixtures for timeout before send, success with lost response, duplicate delivery and changed external state. Specify the expected durable state and allowed next action for each case before implementation.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": null,
+        "evidenceLocation": "docs/work/W1-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W1-T1"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W2-T1",
+      "taskId": "tsk_a57880136cf04fc38caa968841283266",
+      "taskUrl": "https://tanduna.com/p/intent-relay/tasks/tsk_a57880136cf04fc38caa968841283266",
+      "title": "Build the inventory-to-draft-order fixture",
+      "repositoryUrl": "https://github.com/thepianistdirector/intent-relay",
+      "baseBranch": "main",
+      "planningBaseCommit": "9710751a9ce5fdfe97cbcbed598075bf492c30df",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "intent-relay-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md",
+          "version": "9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        }
+      ],
+      "acceptanceCriteria": [
+        "A complete run produces the intended final state across the fixture services.",
+        "Each service can fail before and after applying an effect."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Run the inventory-to-draft-order fixture with sufficient and insufficient stock. Interrupt submission and retry; compare the final external draft and inventory references with the approved intent, with no real purchase.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W2-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W1-T1",
+        "W1-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W2-T2",
+      "taskId": "tsk_25345926856ba14a507a490724a50f2e",
+      "taskUrl": "https://tanduna.com/p/intent-relay/tasks/tsk_25345926856ba14a507a490724a50f2e",
+      "title": "Render a human-readable change preview",
+      "repositoryUrl": "https://github.com/thepianistdirector/intent-relay",
+      "baseBranch": "main",
+      "planningBaseCommit": "9710751a9ce5fdfe97cbcbed598075bf492c30df",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "intent-relay-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md",
+          "version": "9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        }
+      ],
+      "acceptanceCriteria": [
+        "A reviewer can identify which records would change before execution.",
+        "A changed quantity or target invalidates the previous approval."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Ask a reviewer to explain affected records and consequences from the preview. Change the underlying record after preview, attempt approval and verify renewed review or refusal; repeat with keyboard-only interaction.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W2-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W1-T1",
+        "W1-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W3-T1",
+      "taskId": "tsk_498d90d9528a203ec550139dc13237e4",
+      "taskUrl": "https://tanduna.com/p/intent-relay/tasks/tsk_498d90d9528a203ec550139dc13237e4",
+      "title": "Implement durable execution and reconciliation",
+      "repositoryUrl": "https://github.com/thepianistdirector/intent-relay",
+      "baseBranch": "main",
+      "planningBaseCommit": "9710751a9ce5fdfe97cbcbed598075bf492c30df",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "intent-relay-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md",
+          "version": "9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Crash-and-retry scenarios do not silently duplicate supported idempotent effects.",
+        "Ambiguous effects pause for evidence or review rather than being reported as successful."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Execute each partial-failure fixture and restart the worker between transitions. Reconcile durable state with the provider fixture; prove the claimed retry behavior and disclose operations without provider idempotency.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W3-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W2-T1",
+        "W2-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W3-T2",
+      "taskId": "tsk_47bf55274241d86fa71f866a5ebead27",
+      "taskUrl": "https://tanduna.com/p/intent-relay/tasks/tsk_47bf55274241d86fa71f866a5ebead27",
+      "title": "Implement bounded compensation paths",
+      "repositoryUrl": "https://github.com/thepianistdirector/intent-relay",
+      "baseBranch": "main",
+      "planningBaseCommit": "9710751a9ce5fdfe97cbcbed598075bf492c30df",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "intent-relay-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md",
+          "version": "9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        }
+      ],
+      "acceptanceCriteria": [
+        "A failed reservation and partially prepared order recover according to their contracts.",
+        "The system refuses to label an irreversible effect as rolled back."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Complete one supported compensable action and trigger recovery after partial success. Force compensation failure and an irreversible action; verify the record states the remaining effect and required human decision.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W3-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W2-T1",
+        "W2-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W4-T1",
+      "taskId": "tsk_1169eeec09eee4180396c17ce230f9a3",
+      "taskUrl": "https://tanduna.com/p/intent-relay/tasks/tsk_1169eeec09eee4180396c17ce230f9a3",
+      "title": "Publish a connector conformance kit",
+      "repositoryUrl": "https://github.com/thepianistdirector/intent-relay",
+      "baseBranch": "main",
+      "planningBaseCommit": "9710751a9ce5fdfe97cbcbed598075bf492c30df",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "intent-relay-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md",
+          "version": "9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Two independent connector implementations pass the documented contract.",
+        "A connector that falsely reports success is detected by a verification fixture."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Build a second connector against the documented operation contract. Exercise unsupported capability, duplicate request and ambiguous outcome cases; confirm conformance cannot pass from a connector's success string alone.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W4-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W3-T1",
+        "W3-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W4-T2",
+      "taskId": "tsk_dc7fff3cbd7c219ab6c2d90c1094c9f5",
+      "taskUrl": "https://tanduna.com/p/intent-relay/tasks/tsk_dc7fff3cbd7c219ab6c2d90c1094c9f5",
+      "title": "Pilot a low-risk real workflow",
+      "repositoryUrl": "https://github.com/thepianistdirector/intent-relay",
+      "baseBranch": "main",
+      "planningBaseCommit": "9710751a9ce5fdfe97cbcbed598075bf492c30df",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "intent-relay-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md",
+          "version": "9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        }
+      ],
+      "acceptanceCriteria": [
+        "The owner can stop execution and inspect all resulting effects.",
+        "Credentials and unrelated account data never appear in exported run records."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Use an explicitly approved low-risk test workflow and test account. Capture preview, owner approval, actual effect, reconciliation and recovery with one correlated record; stop before unapproved orders, messages or billing effects.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W4-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W3-T1",
+        "W3-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W5-T1",
+      "taskId": "tsk_ff9afc21a23470646901c5cca4e89905",
+      "taskUrl": "https://tanduna.com/p/intent-relay/tasks/tsk_ff9afc21a23470646901c5cca4e89905",
+      "title": "Add tenant and policy isolation",
+      "repositoryUrl": "https://github.com/thepianistdirector/intent-relay",
+      "baseBranch": "main",
+      "planningBaseCommit": "9710751a9ce5fdfe97cbcbed598075bf492c30df",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "intent-relay-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md",
+          "version": "9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Cross-tenant reads and writes fail at execution and retrieval boundaries.",
+        "Revoked access stops future steps and triggers an intelligible recovery state."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Run two synthetic tenants and policies against the same connector fixture. Attempt cross-tenant references and a policy-denied operation; inspect that neither executes or exposes the other tenant's data.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W5-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W4-T1",
+        "W4-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W5-T2",
+      "taskId": "tsk_cd92f4ae1f8e78d0d738ba787b0b5151",
+      "taskUrl": "https://tanduna.com/p/intent-relay/tasks/tsk_cd92f4ae1f8e78d0d738ba787b0b5151",
+      "title": "Integrate two agent runtimes",
+      "repositoryUrl": "https://github.com/thepianistdirector/intent-relay",
+      "baseBranch": "main",
+      "planningBaseCommit": "9710751a9ce5fdfe97cbcbed598075bf492c30df",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "intent-relay-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md",
+          "version": "9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Both clients produce equivalent previews and follow the same approval boundary.",
+        "The agent cannot override an operation's declared scope or recovery limits."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Submit the same intent from two supported agent runtimes. Verify both must pass the same approval and reconciliation contract; test a runtime attempting to skip preview or reuse stale approval.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W5-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W4-T1",
+        "W4-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W6-T1",
+      "taskId": "tsk_be42d1ad73d0a798987ac34d925d0ff0",
+      "taskUrl": "https://tanduna.com/p/intent-relay/tasks/tsk_be42d1ad73d0a798987ac34d925d0ff0",
+      "title": "Run failure and recovery drills",
+      "repositoryUrl": "https://github.com/thepianistdirector/intent-relay",
+      "baseBranch": "main",
+      "planningBaseCommit": "9710751a9ce5fdfe97cbcbed598075bf492c30df",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "intent-relay-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md",
+          "version": "9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Publish reproducible recovery results and unresolved provider limitations.",
+        "Operators can follow a written incident path without editing internal run state."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Rehearse the documented outage and recovery cases with fault timing retained. Compare intended, observed and unresolved effects after restart; include at least one case requiring manual reconciliation.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W6-T1/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W5-T1",
+        "W5-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    },
+    {
+      "taskKey": "W6-T2",
+      "taskId": "tsk_da4f2141c67d689dd3cb523650fb639a",
+      "taskUrl": "https://tanduna.com/p/intent-relay/tasks/tsk_da4f2141c67d689dd3cb523650fb639a",
+      "title": "Publish the first supported connector catalog",
+      "repositoryUrl": "https://github.com/thepianistdirector/intent-relay",
+      "baseBranch": "main",
+      "planningBaseCommit": "9710751a9ce5fdfe97cbcbed598075bf492c30df",
+      "baseMeaning": "Verified planning source containing public skills; not a claim that future prerequisite implementation exists.",
+      "executionGate": "Prerequisite results must be accepted and integrated. Maintainer publishes a new task revision against that integrated base before execution; runtime work also needs the real harness and exact allowed paths.",
+      "primaryModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "effort": "high"
+      },
+      "fallbackModel": {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "effort": "high"
+      },
+      "requiredSkills": [
+        {
+          "name": "tanduna-contribution",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/context-harbor/a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd/.agents/skills/tanduna-contribution/SKILL.md",
+          "version": "a288bac1ff8bf87fe382ee6bf15ace4c0a090cbd"
+        },
+        {
+          "name": "intent-relay-validation",
+          "url": "https://raw.githubusercontent.com/thepianistdirector/intent-relay/9710751a9ce5fdfe97cbcbed598075bf492c30df/.agents/skills/intent-relay-validation/SKILL.md",
+          "version": "9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        }
+      ],
+      "acceptanceCriteria": [
+        "Each connector has a maintainer and reproducible compatibility evidence.",
+        "Unsupported operations remain explicitly unavailable instead of falling back to unrestricted tool calls."
+      ],
+      "acceptanceWorkflow": [
+        "Contributor identifies the saved Tanduna task revision, repository/base, accepted prerequisites, selected primary or fallback model and effort, and exact required skill versions.",
+        "Contributor performs the task-specific testing procedure and maps each original acceptance criterion to setup, expected result, observed result and reproducible evidence. Failed and unrun checks remain visible.",
+        "Maintainer reproduces the material checks, reviews the scoped patch or design artifact and verifies the stated model/skill evidence. Unsupported model claims or missing evidence remain unresolved rather than accepted automatically.",
+        "Maintainer records acceptance or requested changes against the reviewed revision. A passing format check, generated patch or completed model invocation does not by itself satisfy the task."
+      ],
+      "testingWorkflow": {
+        "mode": "repository-harness-and-runtime",
+        "procedure": "Install the catalog's supported connector versions in a clean fixture and run their conformance cases. Change one incompatible capability and verify the catalog reports the failure and last supported range.",
+        "baselineCommands": [
+          "git rev-parse HEAD",
+          "git status --short",
+          "git diff --check 9710751a9ce5fdfe97cbcbed598075bf492c30df"
+        ],
+        "commandLimit": "These existing Git commands verify checkout identity and patch hygiene only. They do not replace functional tests.",
+        "runtimePrerequisite": "Exact functional commands, fixtures and paths must be ratified in the execution revision once the prerequisite-selected stack/harness exists. Do not claim these future checks ran.",
+        "evidenceLocation": "docs/work/W6-T2/acceptance.md"
+      },
+      "dependsOnTaskKeys": [
+        "W5-T1",
+        "W5-T2"
+      ],
+      "status": "MAINTAINER_CONTRACT_PREPARED_NOT_EXECUTION_APPROVED"
+    }
+  ]
+}
