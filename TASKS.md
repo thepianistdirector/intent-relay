@@ -152,7 +152,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W2-T2 — Render a human-readable change preview
 
-**Wave:** W2 · **Prerequisites:** W1-T1, W1-T2
+**Wave:** W2 · **Prerequisites:** W1-T1, W1-T2, W2-T1
 
 Show proposed effects, scope, dependencies and approval requirements.
 
@@ -248,7 +248,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W3-T2 — Implement bounded compensation paths
 
-**Wave:** W3 · **Prerequisites:** W2-T1, W2-T2
+**Wave:** W3 · **Prerequisites:** W2-T1, W2-T2, W3-T1
 
 Add explicit recovery for supported reversible or compensatable steps.
 
@@ -344,7 +344,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W4-T2 — Pilot a low-risk real workflow
 
-**Wave:** W4 · **Prerequisites:** W3-T1, W3-T2
+**Wave:** W4 · **Prerequisites:** W3-T1, W3-T2, W4-T1
 
 Connect approved test accounts to a reversible workflow with narrow permissions.
 
@@ -440,7 +440,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W5-T2 — Integrate two agent runtimes
 
-**Wave:** W5 · **Prerequisites:** W4-T1, W4-T2
+**Wave:** W5 · **Prerequisites:** W4-T1, W4-T2, W5-T1
 
 Expose the same effect contract to two independently selected agent clients.
 
@@ -536,7 +536,7 @@ Exact functional commands, fixtures and paths must be ratified in the execution 
 
 ## W6-T2 — Publish the first supported connector catalog
 
-**Wave:** W6 · **Prerequisites:** W5-T1, W5-T2
+**Wave:** W6 · **Prerequisites:** W5-T1, W5-T2, W6-T1
 
 Document ownership, supported effects, maintenance and cost for a bounded catalog.
 

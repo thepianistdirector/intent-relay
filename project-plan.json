@@ -114,7 +114,8 @@
       ],
       "dependencies": [
         "W1-T1",
-        "W1-T2"
+        "W1-T2",
+        "W2-T1"
       ],
       "status": "PLANNED",
       "body": "Show proposed effects, scope, dependencies and approval requirements.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
@@ -146,7 +147,8 @@
       ],
       "dependencies": [
         "W2-T1",
-        "W2-T2"
+        "W2-T2",
+        "W3-T1"
       ],
       "status": "PLANNED",
       "body": "Add explicit recovery for supported reversible or compensatable steps.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
@@ -178,7 +180,8 @@
       ],
       "dependencies": [
         "W3-T1",
-        "W3-T2"
+        "W3-T2",
+        "W4-T1"
       ],
       "status": "PLANNED",
       "body": "Connect approved test accounts to a reversible workflow with narrow permissions.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
@@ -210,7 +213,8 @@
       ],
       "dependencies": [
         "W4-T1",
-        "W4-T2"
+        "W4-T2",
+        "W5-T1"
       ],
       "status": "PLANNED",
       "body": "Expose the same effect contract to two independently selected agent clients.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
@@ -242,7 +246,8 @@
       ],
       "dependencies": [
         "W5-T1",
-        "W5-T2"
+        "W5-T2",
+        "W6-T1"
       ],
       "status": "PLANNED",
       "body": "Document ownership, supported effects, maintenance and cost for a bounded catalog.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
