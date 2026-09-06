@@ -1,0 +1,251 @@
+{
+  "name": "Intent Relay",
+  "slug": "intent-relay",
+  "stage": "Planning only — no product implementation",
+  "waves": [
+    {
+      "id": "W1",
+      "title": "Describe the effects before the calls",
+      "outcome": "Define a minimal contract around intent and consequences.",
+      "taskIds": [
+        "W1-T1",
+        "W1-T2"
+      ]
+    },
+    {
+      "id": "W2",
+      "title": "A synthetic workflow with real semantics",
+      "outcome": "Implement the smallest inspectable multi-service run.",
+      "taskIds": [
+        "W2-T1",
+        "W2-T2"
+      ]
+    },
+    {
+      "id": "W3",
+      "title": "Execution that admits uncertainty",
+      "outcome": "Handle failures without duplicating effects.",
+      "taskIds": [
+        "W3-T1",
+        "W3-T2"
+      ]
+    },
+    {
+      "id": "W4",
+      "title": "Connect real tools deliberately",
+      "outcome": "Prove interoperability and ownership boundaries.",
+      "taskIds": [
+        "W4-T1",
+        "W4-T2"
+      ]
+    },
+    {
+      "id": "W5",
+      "title": "Work across teams and frameworks",
+      "outcome": "Keep permissions and meaning stable as adoption grows.",
+      "taskIds": [
+        "W5-T1",
+        "W5-T2"
+      ]
+    },
+    {
+      "id": "W6",
+      "title": "An open recovery commons",
+      "outcome": "Make operational reliability a maintained community asset.",
+      "taskIds": [
+        "W6-T1",
+        "W6-T2"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "W1-T1",
+      "wave": "W1",
+      "title": "Specify operation and approval contracts",
+      "goal": "Model read, prepare, commit, reconcile and compensate where a provider supports them.",
+      "acceptanceCriteria": [
+        "Three example operations explicitly declare permissions and reversibility limits.",
+        "An approval binds to the proposed arguments and becomes invalid when they change."
+      ],
+      "dependencies": [],
+      "status": "PLANNED",
+      "body": "Model read, prepare, commit, reconcile and compensate where a provider supports them.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W1-T2",
+      "wave": "W1",
+      "title": "Build a partial-failure scenario pack",
+      "goal": "Describe retries, timeouts, ambiguous provider responses and human intervention.",
+      "acceptanceCriteria": [
+        "Each scenario states what is known, unknown and safe to try next.",
+        "At least one scenario requires reconciliation rather than a claimed automatic rollback."
+      ],
+      "dependencies": [
+        "W1-T1"
+      ],
+      "status": "PLANNED",
+      "body": "Describe retries, timeouts, ambiguous provider responses and human intervention.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W2-T1",
+      "wave": "W2",
+      "title": "Build the inventory-to-draft-order fixture",
+      "goal": "Create synthetic inventory, reservation and order services with controllable failures.",
+      "acceptanceCriteria": [
+        "A complete run produces the intended final state across the fixture services.",
+        "Each service can fail before and after applying an effect."
+      ],
+      "dependencies": [
+        "W1-T1",
+        "W1-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Create synthetic inventory, reservation and order services with controllable failures.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W2-T2",
+      "wave": "W2",
+      "title": "Render a human-readable change preview",
+      "goal": "Show proposed effects, scope, dependencies and approval requirements.",
+      "acceptanceCriteria": [
+        "A reviewer can identify which records would change before execution.",
+        "A changed quantity or target invalidates the previous approval."
+      ],
+      "dependencies": [
+        "W1-T1",
+        "W1-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Show proposed effects, scope, dependencies and approval requirements.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W3-T1",
+      "wave": "W3",
+      "title": "Implement durable execution and reconciliation",
+      "goal": "Persist step state and recover after process or provider interruption.",
+      "acceptanceCriteria": [
+        "Crash-and-retry scenarios do not silently duplicate supported idempotent effects.",
+        "Ambiguous effects pause for evidence or review rather than being reported as successful."
+      ],
+      "dependencies": [
+        "W2-T1",
+        "W2-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Persist step state and recover after process or provider interruption.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W3-T2",
+      "wave": "W3",
+      "title": "Implement bounded compensation paths",
+      "goal": "Add explicit recovery for supported reversible or compensatable steps.",
+      "acceptanceCriteria": [
+        "A failed reservation and partially prepared order recover according to their contracts.",
+        "The system refuses to label an irreversible effect as rolled back."
+      ],
+      "dependencies": [
+        "W2-T1",
+        "W2-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Add explicit recovery for supported reversible or compensatable steps.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W4-T1",
+      "wave": "W4",
+      "title": "Publish a connector conformance kit",
+      "goal": "Define fixtures for authorization, effect reporting, retry and recovery.",
+      "acceptanceCriteria": [
+        "Two independent connector implementations pass the documented contract.",
+        "A connector that falsely reports success is detected by a verification fixture."
+      ],
+      "dependencies": [
+        "W3-T1",
+        "W3-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Define fixtures for authorization, effect reporting, retry and recovery.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W4-T2",
+      "wave": "W4",
+      "title": "Pilot a low-risk real workflow",
+      "goal": "Connect approved test accounts to a reversible workflow with narrow permissions.",
+      "acceptanceCriteria": [
+        "The owner can stop execution and inspect all resulting effects.",
+        "Credentials and unrelated account data never appear in exported run records."
+      ],
+      "dependencies": [
+        "W3-T1",
+        "W3-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Connect approved test accounts to a reversible workflow with narrow permissions.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W5-T1",
+      "wave": "W5",
+      "title": "Add tenant and policy isolation",
+      "goal": "Model per-team credentials, approval rules and run visibility.",
+      "acceptanceCriteria": [
+        "Cross-tenant reads and writes fail at execution and retrieval boundaries.",
+        "Revoked access stops future steps and triggers an intelligible recovery state."
+      ],
+      "dependencies": [
+        "W4-T1",
+        "W4-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Model per-team credentials, approval rules and run visibility.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W5-T2",
+      "wave": "W5",
+      "title": "Integrate two agent runtimes",
+      "goal": "Expose the same effect contract to two independently selected agent clients.",
+      "acceptanceCriteria": [
+        "Both clients produce equivalent previews and follow the same approval boundary.",
+        "The agent cannot override an operation's declared scope or recovery limits."
+      ],
+      "dependencies": [
+        "W4-T1",
+        "W4-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Expose the same effect contract to two independently selected agent clients.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W6-T1",
+      "wave": "W6",
+      "title": "Run failure and recovery drills",
+      "goal": "Exercise process crashes, connector changes and missing provider receipts.",
+      "acceptanceCriteria": [
+        "Publish reproducible recovery results and unresolved provider limitations.",
+        "Operators can follow a written incident path without editing internal run state."
+      ],
+      "dependencies": [
+        "W5-T1",
+        "W5-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Exercise process crashes, connector changes and missing provider receipts.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    },
+    {
+      "id": "W6-T2",
+      "wave": "W6",
+      "title": "Publish the first supported connector catalog",
+      "goal": "Document ownership, supported effects, maintenance and cost for a bounded catalog.",
+      "acceptanceCriteria": [
+        "Each connector has a maintainer and reproducible compatibility evidence.",
+        "Unsupported operations remain explicitly unavailable instead of falling back to unrestricted tool calls."
+      ],
+      "dependencies": [
+        "W5-T1",
+        "W5-T2"
+      ],
+      "status": "PLANNED",
+      "body": "Document ownership, supported effects, maintenance and cost for a bounded catalog.\n\nStart only after the listed prerequisites and scope are accepted by a maintainer. Work in the project's own repository. Document assumptions, unresolved questions and reproducible evidence. This is a proposed work package, not a claim that the implementation already exists."
+    }
+  ]
+}
